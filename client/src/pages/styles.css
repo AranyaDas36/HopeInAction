@@ -1,0 +1,16 @@
+.app{
+    height: 100%;
+    width: 100%;
+
+}
+
+.page-container{
+    height: 68vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.caption-img{
+    width: 30%;
+
+}
