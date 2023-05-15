@@ -15,7 +15,10 @@ import Login from "./pages/Login";
 
 
 function App() {
+
+
   return (
+    
     <div className="App">
 
       <Navbar></Navbar>
@@ -24,14 +27,14 @@ function App() {
 
         <Routes>
 
-          <Route exact path="/home" element={<Home></Home>}></Route>
+          <Route exact path="/" element={<Home></Home>}></Route>
           <Route path="/vision" element={<Vision></Vision>}></Route>
           <Route path="/stories" element={<Stories></Stories>}></Route>
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
 
           <Route path="/signup" element={<Signup></Signup>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
-
+          
 
         </Routes>
         
@@ -43,6 +46,7 @@ function App() {
 
 
     </div>
+    
   );
 }
 

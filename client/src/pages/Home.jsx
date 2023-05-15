@@ -5,7 +5,13 @@ import captionImage from "../images/case2.jpg";
 import "./styles.css";
 
 const Home = () => {
+
+
+  
+
   return (
+
+ 
     <div>
 
       <div>Humanity above Religion.</div>

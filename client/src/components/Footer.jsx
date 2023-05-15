@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import { BsFacebook,BsTwitter,BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -31,9 +32,9 @@ const Footer = () => {
             </div>
 
             <div>
-                <a href="https://www.facebook.com" target="_blank" rel="noreferrer">fb </a> 
-                <a href="https://www.twitter.com" target="_blank" rel="noreferrer"> twitter</a> 
-                <a href="https://www.instagram.com" target="_blank" rel="noreferrer"> insta </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><BsFacebook></BsFacebook> fb </a> 
+                <a href="https://www.twitter.com" target="_blank" rel="noreferrer"><BsTwitter></BsTwitter> twitter</a> 
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer"><BsInstagram></BsInstagram> insta </a>
             </div>
 
         </div>

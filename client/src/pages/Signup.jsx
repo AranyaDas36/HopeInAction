@@ -1,12 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+import Spinner from '../components/Spinner';
 
 
 const Signup = () => {
 
+  const { loader,signup } = useContext(AppContext);
 
-  const [formData, setFormData] = useState( {firstName:"",lastName:"",email:"",
-  country:"India",password:""} )
+
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState( {name:"",phone:"",email:"",
+  donor:"false",password:""} )
 
   const changeHandler = (event) =>{
 
@@ -24,33 +33,48 @@ const Signup = () => {
     event.preventDefault();
     console.log(`Printing final object`);
     console.log(formData);
+    signup(formData);
+
+  }
+
+  const loginRedirecter = (event)=>{
+      navigate("/login");
   }
 
 
   return (
     <div>
 
-      <h1 className='head'>THE FORM</h1>
+      {loader ? 
+      (<Spinner></Spinner>)
+      :
+      (<div>
+        <h1 className='head'>THE FORM</h1>
 
-      <form className='form' onSubmit={submitHandler}>
+        <form className='form' onSubmit={submitHandler}>
 
-      <input type="text" placeholder='First Name' name='firstName' onChange={changeHandler} value={formData.firstName}></input>
-      <input type="text" placeholder='Last Name' name='lastName' onChange={changeHandler} value={formData.lastName}></input>
-      <input type="text" placeholder='Email' name='email' onChange={changeHandler} value={formData.email}></input>
-      <input type="text" placeholder='Password' name='password' onChange={changeHandler} value={formData.password}></input>
-      <label htmlFor='country'>Country</label>
-      <select id='country' name='country' onChange={changeHandler} value={formData.country}>
-          <option>India</option>
-          <option>Nepal</option>
-          <option>Bhutan</option>
-          <option>Bangladesh</option>
-      </select>
+        <input type="text" placeholder='name' name='name' onChange={changeHandler} value={formData.name}></input>
+        <input type="number" placeholder='phone' name='phone' onChange={changeHandler} value={formData.phone}></input>
+        <input type="text" placeholder='Email' name='email' onChange={changeHandler} value={formData.email}></input>
+        <input type="text" placeholder='Password' name='password' onChange={changeHandler} value={formData.password}></input>
+        <label htmlFor='donor'>Donor</label>
+        <input type='checkbox' id='donor' name='donor' onChange={changeHandler} value={formData.donor}></input>
+
+        
+
+        <button>Submit</button>
+
+        </form>
+
+        <button onClick={loginRedirecter}>Registered?</button>
+
+      </div>)
+
+      }
+
+
 
       
-
-      <button>Submit</button>
-
-      </form>
 
 
     </div>

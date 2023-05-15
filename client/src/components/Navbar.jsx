@@ -4,9 +4,15 @@ import logo from "../images/logo.jpeg";
 import { useNavigate } from 'react-router-dom';
 
 
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+
 import './style.css';
 
 const Navbar = () => {
+
+  const { user , logout } = useContext(AppContext);
+
 
     const navigate = useNavigate();
 
@@ -18,7 +24,10 @@ const Navbar = () => {
         navigate('/contact');
     }
 
-
+    function logoutHandler(event){
+      event.preventDefault();
+      logout();
+    }
 
 
   return (
@@ -33,7 +42,7 @@ const Navbar = () => {
 
             <ul className='options'>
                 <li >
-                <NavLink className='navs' activeClassName="active" exact to="/home">Home</NavLink>
+                <NavLink className='navs' activeClassName="active" exact to="/">Home</NavLink>
                 </li>
 
                 <li>
@@ -51,9 +60,23 @@ const Navbar = () => {
 
         </nav>
 
-        <button className='button' onClick={donorHandler}>Donate!</button>
+        
+        {
+            user ? 
+            (<button className='button'>Hey {user.name}!</button>) 
+            : 
+            (<button className='button' onClick={clickHandler}>Sign Up!</button>) 
+            
+        }
 
-        <button className='button' onClick={clickHandler}>Sign Up!</button>
+        {
+            user ? 
+            (<button className='button' onClick={logoutHandler}>logout</button>) 
+            : 
+            <button className='button' onClick={donorHandler}>Donate!</button>
+            
+        }
+
 
         
 
@@ -61,4 +84,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

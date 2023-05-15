@@ -1,4 +1,6 @@
 import React from 'react'
+import { BsMailbox2 ,BsTelephoneOutbound} from "react-icons/bs";
+import { AiOutlineMail } from "react-icons/ai";
 
 const ContactUs = () => {
   return (
@@ -26,7 +28,7 @@ const ContactUs = () => {
                 <div class="box">
                     <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
                         <div class="text">
-                            <h3>Address</h3>
+                            <h3><BsMailbox2></BsMailbox2>Address</h3>
                             <p>
                                 Bardaghat Nagarpalika,9 Nawalparasi,Nepal
                             </p>
@@ -35,7 +37,7 @@ const ContactUs = () => {
                     <div class="box">
                         <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
                             <div class="text">
-                                <h3>Phone</h3>
+                                <h3><BsTelephoneOutbound></BsTelephoneOutbound>Phone</h3>
                                 <p>
                                     0977-78-412151
                                 </p>
@@ -44,7 +46,7 @@ const ContactUs = () => {
                         <div class="box">
                             <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
                                 <div class="text">
-                                    <h3>Email</h3>
+                                    <h3><AiOutlineMail></AiOutlineMail>Email</h3>
                                     <p>
                                         indreni@ntc.net.np
                                     </p>
